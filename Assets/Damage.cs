@@ -10,7 +10,7 @@ public class Damage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = maxHealth; // Sätter startvärdet på hälsan
     }
 
     // Update is called once per frame
