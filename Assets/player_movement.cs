@@ -8,6 +8,7 @@ public class player_movement : MonoBehaviour
 {
     Rigidbody2D rb;
     public Transform groundcheck;
+    public LayerMask Groundmask;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,8 @@ public class player_movement : MonoBehaviour
         float Xspeed = 0;
         float Yspeed = rb.velocity.y;
 
-        bool isgrounded = true;
-        RaycastHit2D hit = Physics2D.Raycast(groundcheck.position, new Vector2(0, -1), 0.3f, 3);
+       
+        RaycastHit2D hit = Physics2D.Raycast(groundcheck.position, new Vector2(0, -1), 0.3f, Groundmask);
 
         if (Input.GetKey(KeyCode.D))
         {
@@ -36,11 +37,7 @@ public class player_movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if(hit != null)
-            {
-                isgrounded = true;
-            }
-            if(isgrounded == true)
+            if(hit == true)
             {
                 Yspeed = 50;
             }
