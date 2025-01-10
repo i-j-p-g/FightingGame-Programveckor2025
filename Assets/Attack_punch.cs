@@ -1,18 +1,33 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 public class Attack_punch : MonoBehaviour
 {
+    Rigidbody2D RigidPunch;
+    public Transform Enemycheck;
+    public LayerMask Enemymask;
     // Start is called before the first frame update
     void Start()
     {
-        
+        RigidPunch = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+
+        RaycastHit2D hit = Physics2D.Raycast(Enemycheck.position, new Vector2(0, -1), 0.3f, Enemymask);
+
+
+        if (Input.GetKey(KeyCode.J))
+        {
+
+
+          
+        }
     }
 }

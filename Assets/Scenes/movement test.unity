@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 596399613}
   - component: {fileID: 596399615}
   - component: {fileID: 596399616}
+  - component: {fileID: 596399617}
   m_Layer: 0
   m_Name: Hexagon Pointed-Top
   m_TagString: Untagged
@@ -328,7 +329,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &596399615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +391,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8828125, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &596399617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596399610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fcbf1465883914cbd1fdd7d2ae40c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1021251994
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1efbdbbe645e044a28fa5e1ca30add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemycheck: {fileID: 0}
+  Enemymask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1753081630
 GameObject:
   m_ObjectHideFlags: 0
