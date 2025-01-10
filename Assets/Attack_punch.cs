@@ -9,6 +9,8 @@ public class Attack_punch : MonoBehaviour
     Rigidbody2D RigidPunch;
     public Transform Enemycheck;
     public LayerMask Enemymask;
+    public Enemy_health enemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,10 @@ public class Attack_punch : MonoBehaviour
         if (Input.GetKey(KeyCode.J))
         {
 
-
+            if(hit == true)
+            {
+                Enemy_health.Enemyhealth -= 10;
+            }
           
         }
     }
