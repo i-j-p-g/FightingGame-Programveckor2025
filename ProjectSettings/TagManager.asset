@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ski
+    uniqueID: 4074584127
+    locked: 0
+  - name: Bidi
+    uniqueID: 3635925949
+    locked: 0
