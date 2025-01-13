@@ -47,5 +47,10 @@ public class Attack_punch : MonoBehaviour
             }
           
         }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            print("L");
+            //Här lägger du in block koden när den e färdig//
+        }
     }
 }
