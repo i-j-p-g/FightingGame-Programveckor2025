@@ -24,12 +24,25 @@ public class Attack_punch : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(Enemycheck.position, new Vector2(0, -1), 0.3f, Enemymask);
 
-
-        if (Input.GetKey(KeyCode.J))
+        print(hit);
+        if (Input.GetKeyDown(KeyCode.J))
         {
 
             if(hit == true)
             {
+                print("J");
+                Enemy_health.Enemyhealth -= 15;
+                
+
+            }
+          
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+
+            if(hit == true)
+            {
+                print("K");
                 Enemy_health.Enemyhealth -= 10;
             }
           

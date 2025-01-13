@@ -17,6 +17,8 @@ public class Enemy_health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(Enemyhealth);
+        
         if(Enemyhealth <= 0)
         {
             SceneManager.LoadScene(1);
