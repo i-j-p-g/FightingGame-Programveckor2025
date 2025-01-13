@@ -9,7 +9,9 @@ public class AI_Follow : MonoBehaviour
     public float speed;
     public float followDuration = 2f;
     public float backAwayDuration = 4f;
-    
+    public Vector2 retreatPosition;
+    public float followSpeed = 2f;      // Hastighet när fienden följer spelaren
+    public float backAwaySpeed = 1f;    // Hastighet när fienden backar
 
     private float timer;
     private bool isBackingAway = false;
@@ -32,33 +34,33 @@ public class AI_Follow : MonoBehaviour
 
         if (isBackingAway)
         {
-            // Fienden backar bort från spelaren
-            if (distance < 14)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, transform.position - (Vector3)direction, speed * Time.deltaTime);
-            }
+            // Fienden rör sig mot en specifik retreat-position
+            transform.position = Vector2.MoveTowards(transform.position, retreatPosition, speed * Time.deltaTime);
 
-            // När timern når noll, börja följa igen
-            if (timer <= 0)
+            // Om fienden når retreat-positionen eller tiden är slut, börja följa igen
+            if (Vector2.Distance(transform.position, retreatPosition) < 0.1f || timer <= 0)
             {
                 isBackingAway = false;
-                timer = followDuration;  // Återställ timer för att följa
+                timer = followDuration;  // Återställ timer för att följa igen
             }
         }
         else
-
-        if (distance < 14)
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-            
+            // Fienden följer spelaren om avståndet är mindre än 14
+            if (distance < 25)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            }
 
+            // När timern tar slut, börja backa
+            if (timer <= 0)
+            {
+                isBackingAway = true;
+                timer = backAwayDuration;  // Återställ timer för att backa
+            }
         }
 
-        if (timer <= 0)
-        {
-            isBackingAway = true;
-            timer = backAwayDuration;  // Återställ timer för att backa
-        }
+        
 
     }
 }
