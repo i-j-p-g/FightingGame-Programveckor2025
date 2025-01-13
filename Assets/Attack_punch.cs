@@ -35,8 +35,13 @@ public class Attack_punch : MonoBehaviour
                 
 
             }
-          
+            GetComponent<Animator>().SetBool("Attack", true);
         }
+        if (Input.GetKeyUp(KeyCode.J))
+        {
+            GetComponent<Animator>().SetBool("Attack", false);
+        }
+
         if (Input.GetKeyDown(KeyCode.K))
         {
 

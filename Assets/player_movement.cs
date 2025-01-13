@@ -28,21 +28,38 @@ public class player_movement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             Xspeed = 25;
+
+            GetComponent<Animator>().SetBool("move", true);
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            GetComponent<Animator>().SetBool("move", false);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             Xspeed = -15;
+            GetComponent<Animator>().SetBool("move", true);
+        }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            GetComponent<Animator>().SetBool("move", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             if(hit == true)
             {
                 Yspeed = 50;
+
+                GetComponent<Animator>().SetBool("Jump", true);
             }
                 
-        } 
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            GetComponent<Animator>().SetBool("Jump", false);
+        }
 
         rb.velocity = new Vector2(Xspeed, Yspeed);
     }
