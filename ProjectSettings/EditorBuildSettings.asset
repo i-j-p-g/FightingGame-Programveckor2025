@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Defeat_secene.unity
     guid: 1642cbd3bd54db9418635901eb42ee20
+  - enabled: 1
+    path: Assets/Scenes/LevelSelection.unity
+    guid: 53db99f91fda6a447bd667cb3f71bbc5
   m_configObjects: {}
