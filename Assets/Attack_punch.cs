@@ -50,7 +50,11 @@ public class Attack_punch : MonoBehaviour
                 print("K");
                 Enemy_health.Enemyhealth -= 10;
             }
-          
+            GetComponent<Animator>().SetBool("Attack2", true);
+        }
+        if (Input.GetKeyUp(KeyCode.K))
+        {
+            GetComponent<Animator>().SetBool("Attack2", false);
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
