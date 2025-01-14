@@ -11,6 +11,9 @@ public class Attack_punch : MonoBehaviour
     public LayerMask Enemymask;
     public Enemy_health enemy;
 
+    bool hasAttackedOnce = false;
+    bool hasAttackedTwice = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +30,7 @@ public class Attack_punch : MonoBehaviour
         print(hit);
         if (Input.GetKeyDown(KeyCode.J))
         {
-
+            hasAttackedOnce = true;
             if(hit == true)
             {
                 print("J");
@@ -40,7 +43,45 @@ public class Attack_punch : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.J))
         {
             GetComponent<Animator>().SetBool("Attack", false);
+           
+            
         }
+
+      
+            if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce)
+            {
+            if (hit == true)
+            {
+
+
+                Enemy_health.Enemyhealth -= 15;
+                
+            }
+            }
+        GetComponent<Animator>().SetBool("Punch2", true);
+        if (Input.GetKeyUp(KeyCode.J))
+            {
+                GetComponent<Animator>().SetBool("Punch2", false);
+            hasAttackedTwice = true;
+            }
+        
+        if (Input.GetKeyDown(KeyCode.J) && hasAttackedTwice)
+        {
+            if (hit == true)
+            {
+
+
+                Enemy_health.Enemyhealth -= 15;
+
+            }
+            GetComponent<Animator>().SetBool("Punch3", true);
+        }
+        
+        if (Input.GetKeyUp(KeyCode.J))
+        {
+            GetComponent<Animator>().SetBool("Punch3", false);
+        }
+
 
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -61,5 +102,8 @@ public class Attack_punch : MonoBehaviour
             print("L");
             //Här lägger du in block koden när den e färdig//
         }
+
+        hasAttackedOnce = false;
+        hasAttackedTwice = false;
     }
 }
