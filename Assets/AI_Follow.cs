@@ -47,7 +47,7 @@ public class AI_Follow : MonoBehaviour
         else
         {
             // Fienden följer spelaren om avståndet är mindre än 14
-            if (distance < 25)
+            if (distance < 40)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
             }
