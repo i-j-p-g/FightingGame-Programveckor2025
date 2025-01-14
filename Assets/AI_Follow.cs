@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -34,6 +35,7 @@ public class AI_Follow : MonoBehaviour
 
         if (isBackingAway)
         {
+            GetComponent<Animator>().SetBool("Move", true);
             // Fienden rör sig mot en specifik retreat-position
             transform.position = Vector2.MoveTowards(transform.position, retreatPosition, speed * Time.deltaTime);
 
@@ -49,6 +51,7 @@ public class AI_Follow : MonoBehaviour
             // Fienden följer spelaren om avståndet är mindre än 14
             if (distance < 40)
             {
+                
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
             }
 
@@ -60,7 +63,10 @@ public class AI_Follow : MonoBehaviour
             }
         }
 
+       
         
+
+        GetComponent<Animator>().SetBool("Move", false);
 
     }
 }

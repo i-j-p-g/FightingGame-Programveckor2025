@@ -63,10 +63,10 @@ public class Attack_punch : MonoBehaviour
             }
         GetComponent<Animator>().SetBool("Punch2", true);
         if (Input.GetKeyUp(KeyCode.J))
-            {
+        {
                 GetComponent<Animator>().SetBool("Punch2", false);
             
-            }
+        }
         
         if (Input.GetKeyDown(KeyCode.J) && hasAttackedTwice)
         {
@@ -79,8 +79,6 @@ public class Attack_punch : MonoBehaviour
             }
             GetComponent<Animator>().SetBool("Punch3", true);
         }
-        
-
         if (Input.GetKeyUp(KeyCode.J))
         {
             GetComponent<Animator>().SetBool("Punch3", false);
