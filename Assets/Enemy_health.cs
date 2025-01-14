@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Enemy_health : MonoBehaviour
 {
     Rigidbody2D rig;
-    public static int Enemyhealth = 100;
+    public static int Enemyhealth = 1000;
     // Start is called before the first frame update
     void Start()
     {

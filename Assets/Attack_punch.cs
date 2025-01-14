@@ -13,6 +13,8 @@ public class Attack_punch : MonoBehaviour
 
     bool hasAttackedOnce = false;
     bool hasAttackedTwice = false;
+    bool hasKickedOnce = false;
+    bool hasKickedTwice = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,7 @@ public class Attack_punch : MonoBehaviour
             if(hit == true)
             {
                 print("J");
-                Enemy_health.Enemyhealth -= 15;
+                Enemy_health.Enemyhealth -= 10;
                 
 
             }
@@ -50,6 +52,7 @@ public class Attack_punch : MonoBehaviour
       
             if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce)
             {
+            hasAttackedTwice = true;
             if (hit == true)
             {
 
@@ -62,7 +65,7 @@ public class Attack_punch : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.J))
             {
                 GetComponent<Animator>().SetBool("Punch2", false);
-            hasAttackedTwice = true;
+            
             }
         
         if (Input.GetKeyDown(KeyCode.J) && hasAttackedTwice)
@@ -71,21 +74,22 @@ public class Attack_punch : MonoBehaviour
             {
 
 
-                Enemy_health.Enemyhealth -= 15;
+                Enemy_health.Enemyhealth -= 30;
 
             }
             GetComponent<Animator>().SetBool("Punch3", true);
         }
         
+
         if (Input.GetKeyUp(KeyCode.J))
         {
             GetComponent<Animator>().SetBool("Punch3", false);
         }
 
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKey(KeyCode.K))
         {
-
+            hasKickedOnce = true;
             if(hit == true)
             {
                 print("K");
@@ -97,6 +101,46 @@ public class Attack_punch : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("Attack2", false);
         }
+        
+        if (Input.GetKey(KeyCode.K) && hasKickedOnce)
+        {
+            hasKickedTwice = true;
+            if (hit == true)
+            {
+
+
+                Enemy_health.Enemyhealth -= 13;
+
+            }
+            GetComponent<Animator>().SetBool("Kick2", true);
+        }
+        
+        if (Input.GetKeyUp(KeyCode.K))
+        {
+            GetComponent<Animator>().SetBool("Kick2", false);
+
+        }
+
+        if (Input.GetKey(KeyCode.K) && hasKickedTwice)
+        {
+            if (hit == true)
+            {
+
+
+                Enemy_health.Enemyhealth -= 15;
+
+            }
+            GetComponent<Animator>().SetBool("Kick3", true);
+        }
+
+
+        if (Input.GetKeyUp(KeyCode.K))
+        {
+            GetComponent<Animator>().SetBool("Kick3", false);
+        }
+
+
+
         if (Input.GetKeyDown(KeyCode.L))
         {
             print("L");
@@ -105,5 +149,7 @@ public class Attack_punch : MonoBehaviour
 
         hasAttackedOnce = false;
         hasAttackedTwice = false;
+        hasKickedOnce = false;
+        hasKickedTwice = false;
     }
 }
