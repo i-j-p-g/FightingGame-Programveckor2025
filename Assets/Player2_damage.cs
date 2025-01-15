@@ -62,6 +62,22 @@ public class Player_damage : MonoBehaviour
             GetComponent<Animator>().SetBool("PUNch2", false);
         }
 
+        if (Input.GetKeyDown(KeyCode.Z) && hasAttackedTwice)
+        {
+            
+            if (hit == true)
+            {
+
+
+                Player1_health.Playerhealth -= 20;
+
+            }
+            GetComponent<Animator>().SetBool("PUNch3", true);
+        }
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            GetComponent<Animator>().SetBool("PUNch3", false);
+        }
 
 
         if (Input.GetKeyDown(KeyCode.X))
@@ -69,16 +85,52 @@ public class Player_damage : MonoBehaviour
             hasKickedOnce = true;
             if (hit == true)
             {
-                print("X");
+
+
                 Player1_health.Playerhealth -= 10;
+
             }
             GetComponent<Animator>().SetBool("KIck", true);
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyUp(KeyCode.X))
         {
             GetComponent<Animator>().SetBool("KIck", false);
         }
 
+        if (Input.GetKeyDown(KeyCode.X) && hasKickedOnce)
+        {
+            hasKickedTwice = true;
+            if (hit == true)
+            {
+
+
+                Player1_health.Playerhealth -= 13;
+
+            }
+            GetComponent<Animator>().SetBool("KIck2", true);
+        }
+        if (Input.GetKeyUp(KeyCode.X))
+        {
+            GetComponent<Animator>().SetBool("KIck2", false);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.X) && hasKickedTwice)
+        {
+            
+            if (hit == true)
+            {
+
+
+                Player1_health.Playerhealth -= 20;
+
+            }
+            GetComponent<Animator>().SetBool("KIck3", true);
+        }
+        if (Input.GetKeyUp(KeyCode.X))
+        {
+            GetComponent<Animator>().SetBool("KIck3", false);
+        }
 
 
         if (Input.GetKeyDown(KeyCode.C))
