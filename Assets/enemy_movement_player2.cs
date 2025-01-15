@@ -23,14 +23,24 @@ public class enemy_movement_player2 : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(groundcheck.position, new Vector2(0, -1), 0.3f, Groundmask);
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             Xspeed = 15;
+            GetComponent<Animator>().SetBool("MOve", true);
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            GetComponent<Animator>().SetBool("MOve", false);
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Xspeed = -25;
+            GetComponent<Animator>().SetBool("MOve", true);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            GetComponent<Animator>().SetBool("MOve", false);
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))

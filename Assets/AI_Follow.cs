@@ -13,19 +13,29 @@ public class AI_Follow : MonoBehaviour
     public Vector2 retreatPosition;
     public float followSpeed = 2f;      // Hastighet när fienden följer spelaren
     public float backAwaySpeed = 1f;    // Hastighet när fienden backar
+    Rigidbody2D rb;
 
     private float timer;
     private bool isBackingAway = false;
     private float distance;
+    bool IsWalking = false;
 
     void Start()
     {
         timer = followDuration;  // Börjar med att följa spelaren
+        rb = GetComponent<Rigidbody2D>();
     }
 
     
     void Update()
     {
+       if(rb.velocity.x == 0)
+        {
+            GetComponent<Animator>().SetBool("Move", false);
+        }else if(rb.velocity.x <= 1)
+        {
+            GetComponent<Animator>().SetBool("Move", true);
+        }
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
@@ -35,9 +45,10 @@ public class AI_Follow : MonoBehaviour
 
         if (isBackingAway)
         {
-            GetComponent<Animator>().SetBool("Move", true);
             // Fienden rör sig mot en specifik retreat-position
             transform.position = Vector2.MoveTowards(transform.position, retreatPosition, speed * Time.deltaTime);
+
+            IsWalking = true;
 
             // Om fienden når retreat-positionen eller tiden är slut, börja följa igen
             if (Vector2.Distance(transform.position, retreatPosition) < 0.1f || timer <= 0)
@@ -51,22 +62,23 @@ public class AI_Follow : MonoBehaviour
             // Fienden följer spelaren om avståndet är mindre än 14
             if (distance < 40)
             {
-                
+                IsWalking = true;
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
             }
 
             // När timern tar slut, börja backa
             if (timer <= 0)
             {
+                IsWalking = true;
                 isBackingAway = true;
                 timer = backAwayDuration;  // Återställ timer för att backa
             }
         }
-
+        
        
         
 
-        GetComponent<Animator>().SetBool("Move", false);
+        
 
     }
 }
