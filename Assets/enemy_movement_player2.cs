@@ -23,7 +23,7 @@ public class enemy_movement_player2 : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(groundcheck.position, new Vector2(0, -1), 0.3f, Groundmask);
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             Xspeed = 15;
             GetComponent<Animator>().SetBool("MOve", true);
@@ -33,7 +33,7 @@ public class enemy_movement_player2 : MonoBehaviour
             GetComponent<Animator>().SetBool("MOve", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             Xspeed = -25;
             GetComponent<Animator>().SetBool("MOve", true);
@@ -49,7 +49,11 @@ public class enemy_movement_player2 : MonoBehaviour
             {
                 Yspeed = 50;
             }
-
+            GetComponent<Animator>().SetBool("JUmp", true);
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            GetComponent<Animator>().SetBool("JUmp", false);
         }
 
         rb.velocity = new Vector2(Xspeed, Yspeed);
