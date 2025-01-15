@@ -9,6 +9,11 @@ public class Player_damage : MonoBehaviour
     public LayerMask Playermask;
     public Player1_health player;
 
+    bool hasAttackedOnce = false;
+    bool hasAttackedTwice = false;
+    bool hasKickedOnce = false;
+    bool hasKickedTwice = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +30,7 @@ public class Player_damage : MonoBehaviour
         print(hit);
         if (Input.GetKeyDown(KeyCode.Z))
         {
-
+            hasAttackedOnce = true;
             if (hit == true)
             {
                 print("Z");
@@ -33,18 +38,49 @@ public class Player_damage : MonoBehaviour
 
 
             }
-
+            GetComponent<Animator>().SetBool("PUNch", true);
         }
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            GetComponent<Animator>().SetBool("PUNch", false);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Z) && hasAttackedOnce)
+        {
+            hasAttackedTwice = true;
+            if (hit == true)
+            {
+
+
+                Player1_health.Playerhealth -= 15;
+
+            }
+            GetComponent<Animator>().SetBool("PUNch2", true);
+        }
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            GetComponent<Animator>().SetBool("PUNch2", false);
+        }
+
+
+
         if (Input.GetKeyDown(KeyCode.X))
         {
-
+            hasKickedOnce = true;
             if (hit == true)
             {
                 print("X");
                 Player1_health.Playerhealth -= 10;
             }
-
+            GetComponent<Animator>().SetBool("KIck", true);
         }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            GetComponent<Animator>().SetBool("KIck", false);
+        }
+
+
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             print("C");

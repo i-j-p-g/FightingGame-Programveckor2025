@@ -60,8 +60,9 @@ public class Attack_punch : MonoBehaviour
                 Enemy_health.Enemyhealth -= 15;
                 
             }
-            }
-        GetComponent<Animator>().SetBool("Punch2", true);
+            GetComponent<Animator>().SetBool("Punch2", true);
+        }
+        
         if (Input.GetKeyUp(KeyCode.J))
         {
                 GetComponent<Animator>().SetBool("Punch2", false);
