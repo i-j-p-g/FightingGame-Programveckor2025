@@ -16,6 +16,8 @@ public class Attack_punch : MonoBehaviour
     bool hasKickedOnce = false;
     bool hasKickedTwice = false;
 
+    float Cooldown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class Attack_punch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Cooldown += Time.deltaTime;
 
         RaycastHit2D hit = Physics2D.Raycast(Enemycheck.position, new Vector2(0, -1), 0.3f, Enemymask);
 
@@ -41,6 +43,7 @@ public class Attack_punch : MonoBehaviour
 
             }
             GetComponent<Animator>().SetBool("Attack", true);
+            Cooldown = 0;
         }
         if (Input.GetKeyUp(KeyCode.J))
         {
@@ -50,7 +53,7 @@ public class Attack_punch : MonoBehaviour
         }
 
       
-            if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce)
+            if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce && Cooldown > 0.22f)
             {
             hasAttackedTwice = true;
             if (hit == true)
@@ -61,7 +64,8 @@ public class Attack_punch : MonoBehaviour
                 
             }
             GetComponent<Animator>().SetBool("Punch2", true);
-        }
+            Cooldown = 0;
+            }
         
         if (Input.GetKeyUp(KeyCode.J))
         {
@@ -69,7 +73,7 @@ public class Attack_punch : MonoBehaviour
             
         }
         
-        if (Input.GetKeyDown(KeyCode.J) && hasAttackedTwice)
+        if (Input.GetKeyDown(KeyCode.J) && hasAttackedTwice && Cooldown > 0.13f)
         {
             if (hit == true)
             {
@@ -79,6 +83,7 @@ public class Attack_punch : MonoBehaviour
 
             }
             GetComponent<Animator>().SetBool("Punch3", true);
+            Cooldown = 0;
         }
         if (Input.GetKeyUp(KeyCode.J))
         {
@@ -86,7 +91,7 @@ public class Attack_punch : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             hasKickedOnce = true;
             if(hit == true)
@@ -95,13 +100,14 @@ public class Attack_punch : MonoBehaviour
                 Enemy_health.Enemyhealth -= 10;
             }
             GetComponent<Animator>().SetBool("Attack2", true);
+            Cooldown = 0;
         }
         if (Input.GetKeyUp(KeyCode.K))
         {
             GetComponent<Animator>().SetBool("Attack2", false);
         }
         
-        if (Input.GetKey(KeyCode.K) && hasKickedOnce)
+        if (Input.GetKeyDown(KeyCode.K) && hasKickedOnce && Cooldown > 0.2f)
         {
             hasKickedTwice = true;
             if (hit == true)
@@ -112,6 +118,7 @@ public class Attack_punch : MonoBehaviour
 
             }
             GetComponent<Animator>().SetBool("Kick2", true);
+            Cooldown = 0;
         }
         
         if (Input.GetKeyUp(KeyCode.K))
@@ -120,7 +127,7 @@ public class Attack_punch : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.K) && hasKickedTwice)
+        if (Input.GetKeyDown(KeyCode.K) && hasKickedTwice && Cooldown > 0.2f)
         {
             if (hit == true)
             {
@@ -130,6 +137,7 @@ public class Attack_punch : MonoBehaviour
 
             }
             GetComponent<Animator>().SetBool("Kick3", true);
+            Cooldown = 0;
         }
 
 
@@ -144,6 +152,15 @@ public class Attack_punch : MonoBehaviour
         {
             print("L");
             //Här lägger du in block koden när den e färdig//
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            GetComponent<Animator>().SetBool("Emote", true);
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            GetComponent<Animator>().SetBool("Emote", false);
         }
 
         hasAttackedOnce = false;
