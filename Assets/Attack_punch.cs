@@ -17,6 +17,7 @@ public class Attack_punch : MonoBehaviour
     bool hasKickedTwice = false;
 
     float Cooldown;
+    float ComboTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class Attack_punch : MonoBehaviour
     void Update()
     {
         Cooldown += Time.deltaTime;
+        ComboTimer += Time.deltaTime;
 
         RaycastHit2D hit = Physics2D.Raycast(Enemycheck.position, new Vector2(0, -1), 0.3f, Enemymask);
 
@@ -39,8 +41,8 @@ public class Attack_punch : MonoBehaviour
             {
                 print("J");
                 Enemy_health.Enemyhealth -= 10;
-                
 
+                
             }
             GetComponent<Animator>().SetBool("Attack", true);
             Cooldown = 0;
@@ -51,43 +53,51 @@ public class Attack_punch : MonoBehaviour
            
             
         }
+        
 
-      
-            if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce && Cooldown > 0.22f)
+
+
+            if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce && Cooldown > 1.5f)
             {
-            hasAttackedTwice = true;
-            if (hit == true)
-            {
+                hasAttackedTwice = true;
+                if (hit == true)
+                {
 
 
-                Enemy_health.Enemyhealth -= 15;
+                    Enemy_health.Enemyhealth -= 15;
+
+                }
+                GetComponent<Animator>().SetBool("Punch2", true);
+                Cooldown = 0;
                 
             }
-            GetComponent<Animator>().SetBool("Punch2", true);
-            Cooldown = 0;
-            }
-        
-        if (Input.GetKeyUp(KeyCode.J))
-        {
-                GetComponent<Animator>().SetBool("Punch2", false);
-            
-        }
-        
-        if (Input.GetKeyDown(KeyCode.J) && hasAttackedTwice && Cooldown > 0.13f)
-        {
-            if (hit == true)
+
+            if (Input.GetKeyUp(KeyCode.J))
             {
-
-
-                Enemy_health.Enemyhealth -= 30;
+                GetComponent<Animator>().SetBool("Punch2", false);
 
             }
-            GetComponent<Animator>().SetBool("Punch3", true);
-            Cooldown = 0;
-        }
-        if (Input.GetKeyUp(KeyCode.J))
+        
+        if (ComboTimer < 3.1f && ComboTimer > 1.5f)
         {
-            GetComponent<Animator>().SetBool("Punch3", false);
+
+
+            if (Input.GetKeyDown(KeyCode.J) && hasAttackedTwice && Cooldown > 0.13f)
+            {
+                if (hit == true)
+                {
+
+
+                    Enemy_health.Enemyhealth -= 30;
+
+                }
+                GetComponent<Animator>().SetBool("Punch3", true);
+                Cooldown = 0;
+            }
+            if (Input.GetKeyUp(KeyCode.J))
+            {
+                GetComponent<Animator>().SetBool("Punch3", false);
+            }
         }
 
 
