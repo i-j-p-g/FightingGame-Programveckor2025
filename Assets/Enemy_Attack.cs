@@ -13,7 +13,8 @@ public class Enemy_Attack : MonoBehaviour
     public float attackCooldown = 2f;  //tid mellan attacker
 
     private Animator animator;
-    private bool canAttack = true;        // Attack timer
+    bool hasKickedOnce = false;
+    bool hasKickedTwice = false;        
     private float distance;
 
     // Start is called before the first frame update
@@ -27,20 +28,41 @@ public class Enemy_Attack : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distance <= attackRange && canAttack)
+        if (distance <= attackRange && hasKickedOnce)
         {
             Attack();
         }
         else
         {
-            
+            FollowPlayer();  //Följ spelaren om hen är långt brot
         }
 
         void Attack()
         {
-            canAttack = false; //sätter attack cooldown
+            hasKickedOnce = false; // attack cooldown
+            
+            animator.SetBool("Enemy Kick", true); // Sätter boolen "Attack" till true för att starta animationen
 
+            // Raycast för att känna av träff
+            RaycastHit2D hit = Physics2D.Raycast(Enemycheck.position, Vector2.right * transform.localScale.x, 0.3f, playerMask);
+
+            if (hit.collider != null)
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("Spelaren träffades av attacken!");
+                    // Här kan du lägga till skada på spelaren
+                }
+            }
         }
+
+        void FollowPlayer()
+        {
+            // följarfunktion om spelaren är långt bort
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime); 
+        }
+
+
 
     }
 }

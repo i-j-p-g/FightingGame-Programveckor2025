@@ -59,7 +59,7 @@ public class AI_Follow : MonoBehaviour
         }
         else
         {
-            // Fienden följer spelaren om avståndet är mindre än 14
+            // Fienden följer spelaren om avståndet är mindre än 40
             if (distance < 40)
             {
                 IsWalking = true;
