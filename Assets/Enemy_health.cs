@@ -1,25 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Enemy_health : MonoBehaviour
 {
-    Rigidbody2D rig;
+    public Slider healthBar; // Reference to the UI Slider for the enemy's health bar
     public static int Enemyhealth = 1000;
-    // Start is called before the first frame update
+    private int maxHealth = 1000; // Maximum health of the enemy
+
     void Start()
     {
-        rig = GetComponent<Rigidbody2D>();
-
+        // Initialize the health bar
+        if (healthBar != null)
+        {
+            healthBar.maxValue = maxHealth;
+            healthBar.value = Enemyhealth;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         print(Enemyhealth);
-        
-        if(Enemyhealth <= 0)
+
+        // Update the health bar value
+        if (healthBar != null)
+        {
+            healthBar.value = Enemyhealth;
+        }
+
+        // If enemy's health reaches zero, load the next scene
+        if (Enemyhealth <= 0)
         {
             SceneManager.LoadScene(1);
         }
