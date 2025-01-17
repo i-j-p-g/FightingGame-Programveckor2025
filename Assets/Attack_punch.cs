@@ -36,11 +36,11 @@ public class Attack_punch : MonoBehaviour
         print(hit);
         if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce == false && hasAttackedTwice == false)
         {
+
             hasAttackedOnce = true;
-            print("first attavk");
             if(hit == true)
             {
-                print("J");
+                
                 Enemy_health.Enemyhealth -= 10;
 
                 
@@ -56,10 +56,10 @@ public class Attack_punch : MonoBehaviour
 
 
 
-            if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce && Cooldown > 0.5f)
+            if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce)
             {
                 hasAttackedTwice = true;
-                print("second attavk");
+                hasAttackedOnce = false;
                 if (hit == true)
                 {
 
@@ -82,7 +82,7 @@ public class Attack_punch : MonoBehaviour
         if (Cooldown < 2 )
         {
 
-            if (Input.GetKeyDown(KeyCode.J) && hasAttackedTwice && Cooldown > 1.2f)
+            if (Input.GetKeyDown(KeyCode.J) && hasAttackedTwice)
             {
 
                 print("third attavk");
@@ -94,7 +94,7 @@ public class Attack_punch : MonoBehaviour
 
                 }
                 GetComponent<Animator>().Play("Punch_Combo_punch3");
-
+                hasAttackedTwice = false;
             }
            
         }
@@ -102,18 +102,21 @@ public class Attack_punch : MonoBehaviour
         {
             hasAttackedTwice = false;
         }
-        
 
 
-        if (Input.GetKeyDown(KeyCode.K))
+
+        if (Input.GetKeyDown(KeyCode.K) && hasKickedOnce == false && hasKickedTwice == false)
         {
             hasKickedOnce = true;
-            if(hit == true)
+            
+            if (hit == true)
             {
-                print("K");
-                Enemy_health.Enemyhealth -= 10;
+                
+                Enemy_health.Enemyhealth -= 15;
+
+
             }
-            GetComponent<Animator>().Play("First_Kick");
+            GetComponent<Animator>().Play("KIck_1");
             Cooldown = 0;
         }
 
@@ -122,19 +125,23 @@ public class Attack_punch : MonoBehaviour
 
 
 
-            if (Input.GetKeyDown(KeyCode.K) && hasKickedOnce && Cooldown > 0.5f)
+            if (Input.GetKeyDown(KeyCode.K) && hasKickedOnce)
             {
                 hasKickedTwice = true;
+                
                 if (hit == true)
                 {
 
 
-                    Enemy_health.Enemyhealth -= 13;
+                    Enemy_health.Enemyhealth -= 20;
 
                 }
-                GetComponent<Animator>().Play("Kick_2Combo");
-                Cooldown = 0;
+                GetComponent<Animator>().Play("KIck_2");
+                hasKickedOnce = false;
+
             }
+
+
         }
         else
         {
@@ -144,20 +151,21 @@ public class Attack_punch : MonoBehaviour
         if (Cooldown < 2)
         {
 
-
-
-            if (Input.GetKeyDown(KeyCode.K) && hasKickedTwice && Cooldown > 1.1f)
+            if (Input.GetKeyDown(KeyCode.K) && hasKickedTwice)
             {
+
+                
                 if (hit == true)
                 {
 
 
-                    Enemy_health.Enemyhealth -= 15;
+                    Enemy_health.Enemyhealth -= 30;
 
                 }
-                GetComponent<Animator>().Play("Kick_3Combo");
-                Cooldown = 0;
+                GetComponent<Animator>().Play("Kick_3");
+                hasKickedTwice = false;
             }
+
         }
         else
         {
@@ -181,7 +189,6 @@ public class Attack_punch : MonoBehaviour
             GetComponent<Animator>().SetBool("Emote", false);
         }
 
-        hasKickedOnce = false;
-        hasKickedTwice = false;
+        
     }
 }

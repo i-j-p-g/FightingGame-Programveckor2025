@@ -8,7 +8,7 @@ public class Player_damage : MonoBehaviour
     Rigidbody2D RigidPunch;
     public Transform Playercheck;
     public LayerMask Playermask;
-    public Player1_health player;
+    public PLayer1health player;
 
     bool hasAttackedOnce = false;
     bool hasAttackedTwice = false;
@@ -110,7 +110,7 @@ public class Player_damage : MonoBehaviour
 
                 }
                 GetComponent<Animator>().Play("KIck_1");
-            Cooldown = 0;
+                Cooldown = 0;
             }
         
        
@@ -140,7 +140,7 @@ public class Player_damage : MonoBehaviour
             hasKickedOnce = false;
         }
 
-        if (Cooldown < 1)
+        if (Cooldown < 2)
         {
 
 
