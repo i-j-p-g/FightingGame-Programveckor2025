@@ -129,8 +129,12 @@ public class Attack_punch : MonoBehaviour
 
 
             }
-            GetComponent<Animator>().Play("KIck_1");
+            GetComponent<Animator>().SetBool("Attack2", true);
             Cooldown = 0;
+        }
+        if (Input.GetKeyUp(KeyCode.K))
+        {
+            GetComponent<Animator>().SetBool("Attack", false);
         }
 
         if (Cooldown < 1)
