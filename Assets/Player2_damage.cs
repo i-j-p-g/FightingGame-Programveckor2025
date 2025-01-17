@@ -52,7 +52,7 @@ public class Player_damage : MonoBehaviour
 
 
 
-            if (Input.GetKeyDown(KeyCode.Z) && hasAttackedOnce)
+            if (Input.GetKeyDown(KeyCode.Z) && hasAttackedOnce == true)
             {
                 hasAttackedTwice = true;
                 if (hit == true)
@@ -63,7 +63,7 @@ public class Player_damage : MonoBehaviour
 
                 }
                 GetComponent<Animator>().SetBool("PUNch2", true);
-
+                hasAttackedOnce = false;
             }
             
         }
@@ -88,6 +88,7 @@ public class Player_damage : MonoBehaviour
 
                 }
                 GetComponent<Animator>().Play("PUNch3");
+                hasAttackedTwice = false;
             }
 
         }
@@ -121,7 +122,7 @@ public class Player_damage : MonoBehaviour
 
 
 
-            if (Input.GetKeyDown(KeyCode.X) && hasKickedOnce)
+            if (Input.GetKeyDown(KeyCode.X) && hasKickedOnce == true)
             {
                 hasKickedTwice = true;
                 if (hit == true)
@@ -132,6 +133,7 @@ public class Player_damage : MonoBehaviour
 
                 }
                 GetComponent<Animator>().Play("KIck_2");
+                hasKickedOnce = false;
             }
 
         }
@@ -156,6 +158,7 @@ public class Player_damage : MonoBehaviour
 
                 }
                 GetComponent<Animator>().Play("Kick_3");
+                hasKickedTwice = false;
             }
         }
         else

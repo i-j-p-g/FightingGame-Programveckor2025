@@ -45,8 +45,12 @@ public class Attack_punch : MonoBehaviour
 
                 
             }
-            GetComponent<Animator>().Play("New Animation_PunchCombo1");
+            GetComponent<Animator>().SetBool("Attack", true);
             Cooldown = 0;
+        }
+        if (Input.GetKeyUp(KeyCode.J))
+        {
+            GetComponent<Animator>().SetBool("Attack", false);
         }
         
 
@@ -56,7 +60,7 @@ public class Attack_punch : MonoBehaviour
 
 
 
-            if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce)
+            if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce == true)
             {
                 hasAttackedTwice = true;
                 hasAttackedOnce = false;
@@ -67,25 +71,30 @@ public class Attack_punch : MonoBehaviour
                     Enemy_health.Enemyhealth -= 15;
 
                 }
-                GetComponent<Animator>().Play("New Animation_punch2");
+                GetComponent<Animator>().SetBool("Punch2", true);
 
 
             }
+            if (Input.GetKeyUp(KeyCode.J))
+            {
+                GetComponent<Animator>().SetBool("Punch2", false);
+            }
 
-            
+
         }
         else
         {
             hasAttackedOnce = false;
+
         }
 
         if (Cooldown < 2 )
         {
 
-            if (Input.GetKeyDown(KeyCode.J) && hasAttackedTwice)
+            if (Input.GetKeyDown(KeyCode.J) && hasAttackedTwice == true)
             {
 
-                print("third attavk");
+                
                 if (hit == true)
                 {
 
@@ -93,10 +102,14 @@ public class Attack_punch : MonoBehaviour
                     Enemy_health.Enemyhealth -= 30;
 
                 }
-                GetComponent<Animator>().Play("Punch_Combo_punch3");
+                GetComponent<Animator>().SetBool("Punch3", true);
                 hasAttackedTwice = false;
             }
-           
+            if (Input.GetKeyUp(KeyCode.J))
+            {
+                GetComponent<Animator>().SetBool("Punch3", false);
+            }
+
         }
         else
         {
@@ -125,7 +138,7 @@ public class Attack_punch : MonoBehaviour
 
 
 
-            if (Input.GetKeyDown(KeyCode.K) && hasKickedOnce)
+            if (Input.GetKeyDown(KeyCode.K) && hasKickedOnce == true)
             {
                 hasKickedTwice = true;
                 
@@ -151,7 +164,7 @@ public class Attack_punch : MonoBehaviour
         if (Cooldown < 2)
         {
 
-            if (Input.GetKeyDown(KeyCode.K) && hasKickedTwice)
+            if (Input.GetKeyDown(KeyCode.K) && hasKickedTwice == true)
             {
 
                 
