@@ -183,7 +183,11 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
+<<<<<<< HEAD
   orthographic size: 35.370823
+=======
+  orthographic size: 23.456877
+>>>>>>> d21761234b1b5a5d2e3b4763f4d852fc95762b93
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -208,7 +212,11 @@ Transform:
   m_GameObject: {fileID: 452703150}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -8.8, y: 16.4, z: -10}
+=======
+  m_LocalPosition: {x: -10, y: 10, z: -10}
+>>>>>>> d21761234b1b5a5d2e3b4763f4d852fc95762b93
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -299,8 +307,13 @@ Transform:
   m_GameObject: {fileID: 596399610}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9999599, z: -0, w: 0.008959248}
+<<<<<<< HEAD
   m_LocalPosition: {x: 39, y: 0.6, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
+=======
+  m_LocalPosition: {x: 22, y: -1.9999995, z: 0}
+  m_LocalScale: {x: 3.7, y: 3.7, z: 1}
+>>>>>>> d21761234b1b5a5d2e3b4763f4d852fc95762b93
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1021251995}
@@ -611,6 +624,90 @@ Transform:
   m_Children: []
   m_Father: {fileID: 596399612}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1488694509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1488694511}
+  - component: {fileID: 1488694510}
+  m_Layer: 0
+  m_Name: Bakgrund sunrise 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1488694510
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488694509}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 63742089a82149e47b9d4200ae311fb2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.4, y: 3.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1488694511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488694509}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10, y: 9.999999, z: 0}
+  m_LocalScale: {x: 15.543, y: 15.543, z: 15.543}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1566002305
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,8 +950,13 @@ Transform:
   m_GameObject: {fileID: 1600630336}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -51.5, y: 1.7, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
+=======
+  m_LocalPosition: {x: -37.5, y: -2.0000005, z: 0}
+  m_LocalScale: {x: 3.725, y: 3.875, z: 1}
+>>>>>>> d21761234b1b5a5d2e3b4763f4d852fc95762b93
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1566002306}
@@ -1128,4 +1230,8 @@ SceneRoots:
   - {fileID: 1753081633}
   - {fileID: 596399612}
   - {fileID: 1594402517}
+<<<<<<< HEAD
   - {fileID: 876195311}
+=======
+  - {fileID: 1488694511}
+>>>>>>> d21761234b1b5a5d2e3b4763f4d852fc95762b93
