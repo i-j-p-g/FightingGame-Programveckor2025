@@ -33,7 +33,7 @@ public class Enemy_health : MonoBehaviour
         // If enemy's health reaches zero, load the next scene
         if (Enemyhealth <= 0)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 }

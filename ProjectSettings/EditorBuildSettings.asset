@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/LevelSelection.unity
+    guid: 53db99f91fda6a447bd667cb3f71bbc5
+  - enabled: 1
     path: Assets/Scenes/movement test.unity
     guid: a737f99ad6542ff4da42ab8625e0bcc8
   - enabled: 1
@@ -17,7 +20,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Defeat_secene.unity
     guid: 1642cbd3bd54db9418635901eb42ee20
-  - enabled: 1
-    path: Assets/Scenes/LevelSelection.unity
-    guid: 53db99f91fda6a447bd667cb3f71bbc5
   m_configObjects: {}

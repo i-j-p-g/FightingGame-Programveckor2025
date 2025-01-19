@@ -21,7 +21,7 @@ public class PLayer1health : MonoBehaviour
 
         if (Playerhealth <= 0)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
 }
