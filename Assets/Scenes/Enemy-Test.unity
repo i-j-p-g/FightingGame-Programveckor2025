@@ -283,6 +283,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1276784135}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &697989317
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,6 +590,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   attackCooldown: 2
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1049924690 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8399420875276687843, guid: e831986d65fedcd44a926a373d02c476, type: 3}
