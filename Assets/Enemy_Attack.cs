@@ -41,11 +41,16 @@ public class Enemy_Attack : MonoBehaviour
         {
             hasKickedOnce = false; // attack cooldown
             
-            animator.SetBool("Enemy Kick", true); // Sätter boolen "Enemy kick" till true för att starta animationen
+           
 
             // Raycast för att känna av träff
             RaycastHit2D hit = Physics2D.Raycast(Enemycheck.position, Vector2.right * transform.localScale.x, 0.3f, playerMask);
 
+            if (hit)
+            {
+                PLayer1health.Playerhealth -= 10;
+                animator.SetBool("Enemy Kick", true); // Sätter boolen "Enemy kick" till true för att starta animationen
+            }
             
         }
 
