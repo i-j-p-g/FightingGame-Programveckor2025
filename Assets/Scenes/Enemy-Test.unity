@@ -288,18 +288,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8399420875276687843, guid: e831986d65fedcd44a926a373d02c476, type: 3}
   m_PrefabInstance: {fileID: 6731924412321299388}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1049924691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049924690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aa0db0d785c5424095b02f8b80dffce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1049924692
 Animator:
   serializedVersion: 5
@@ -321,25 +309,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1049924693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049924690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa1efbdbbe645e044a28fa5e1ca30add, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemycheck: {fileID: 0}
-  Enemymask:
-    serializedVersion: 2
-    m_Bits: 64
-  enemy: {fileID: 0}
-  hasAttackedOnce: 0
-  hasAttackedTwice: 0
 --- !u!61 &1049924694
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -385,22 +354,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.347638, y: 4.341165}
   m_EdgeRadius: 0
---- !u!114 &1049924695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049924690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b16db3396fb02d4f9f12b6ea696c00d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundcheck: {fileID: 0}
-  Groundmask:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!50 &1049924696
 Rigidbody2D:
   serializedVersion: 4
@@ -501,7 +454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1276784131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -932,6 +885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1714498540}
   - component: {fileID: 1714498539}
+  - component: {fileID: 1714498541}
   m_Layer: 0
   m_Name: Bakgrund sunrise 1
   m_TagString: Untagged
@@ -1006,6 +960,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714498541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714498538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe79a45f177127438b7a6f5945921f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1761315759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,7 +1128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &2044143743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1460,15 +1426,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8399420875276687843, guid: e831986d65fedcd44a926a373d02c476, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1049924692}
-    - targetCorrespondingSourceObject: {fileID: 8399420875276687843, guid: e831986d65fedcd44a926a373d02c476, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1049924691}
-    - targetCorrespondingSourceObject: {fileID: 8399420875276687843, guid: e831986d65fedcd44a926a373d02c476, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1049924693}
-    - targetCorrespondingSourceObject: {fileID: 8399420875276687843, guid: e831986d65fedcd44a926a373d02c476, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1049924695}
   m_SourcePrefab: {fileID: 100100000, guid: e831986d65fedcd44a926a373d02c476, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

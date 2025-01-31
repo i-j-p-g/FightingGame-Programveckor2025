@@ -13,7 +13,7 @@ public class Enemy_Attack : MonoBehaviour
     public float attackCooldown = 2f;  //tid mellan attacker
 
     private Animator animator;
-    bool hasKickedOnce = false;
+    bool hasKickedOnce = true;
     bool hasKickedTwice = false;        
     private float distance;
 
@@ -27,14 +27,15 @@ public class Enemy_Attack : MonoBehaviour
     void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
-
+        Debug.Log("Distance: " + distance);
+        Debug.Log("AttackRange: " + attackRange);
         if (distance <= attackRange && hasKickedOnce)
         {
             Attack();
         }
         else
         {
-            FollowPlayer();  //Följ spelaren om hen är långt brot
+            FollowPlayer();  //Följ spelaren om hen är långt bort
         }
 
         void Attack()
@@ -44,12 +45,14 @@ public class Enemy_Attack : MonoBehaviour
            
 
             // Raycast för att känna av träff
-            RaycastHit2D hit = Physics2D.Raycast(Enemycheck.position, Vector2.right * transform.localScale.x, 0.3f, playerMask);
+            RaycastHit2D hit = Physics2D.Raycast(Enemycheck.position, Vector2.left * transform.localScale.x, 0.3f, playerMask);
 
             if (hit)
             {
+                Debug.Log("Enemy Kicked");
                 PLayer1health.Playerhealth -= 10;
                 animator.SetBool("Enemy Kick", true); // Sätter boolen "Enemy kick" till true för att starta animationen
+                animator.Play("KIck_1");
             }
             
         }
