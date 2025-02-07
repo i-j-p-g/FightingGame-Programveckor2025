@@ -11,6 +11,8 @@ public class Enemy_Attack : MonoBehaviour
     public Transform Enemycheck;       //position för raycasten
     public LayerMask EnemyMask;
     public float attackCooldown = 2f;  //tid mellan attacker
+    private float lastAttack;
+    public int dammages = 3;
 
     public Animator animator;
     bool hasKickedOnce = true;
@@ -30,9 +32,10 @@ public class Enemy_Attack : MonoBehaviour
         distance = Vector2.Distance(transform.position, player.transform.position);
         Debug.Log("Distance: " + distance);
         Debug.Log("AttackRange: " + attackRange);
-        if (distance <= attackRange && hasKickedOnce)
+        if (distance <= attackRange && hasKickedOnce && (lastAttack + attackCooldown) <= Time.time)
         {
             Attack();
+            lastAttack = Time.time;
         }
         else
         {
@@ -55,7 +58,7 @@ public class Enemy_Attack : MonoBehaviour
                 string picAttack = attacks[useAttacks];
 
                 Debug.Log("Enemy Kicked");
-                PLayer1health.Playerhealth -= 1;
+                PLayer1health.Playerhealth -= dammages;
                 animator.SetBool(picAttack, true); // Sätter boolen "Enemy kick" till true för att starta animationen
                 animator.Play(picAttack);
             }
