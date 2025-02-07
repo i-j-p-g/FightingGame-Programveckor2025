@@ -22,7 +22,7 @@ public class Enemy_health : MonoBehaviour
 
     void Update()
     {
-        print(Enemyhealth);
+        //print(Enemyhealth);
 
         // Update the health bar value
         if (healthBar != null)

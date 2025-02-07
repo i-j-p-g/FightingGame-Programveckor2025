@@ -17,7 +17,7 @@ public class PLayer1health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(Playerhealth);
+        // print(Playerhealth);
 
         if (Playerhealth <= 0)
         {

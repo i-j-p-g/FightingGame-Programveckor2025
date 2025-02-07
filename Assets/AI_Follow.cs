@@ -42,7 +42,7 @@ public class AI_Follow : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         timer -= Time.deltaTime;
-
+        
         if (isBackingAway)
         {
             // Fienden rör sig mot en specifik retreat-position

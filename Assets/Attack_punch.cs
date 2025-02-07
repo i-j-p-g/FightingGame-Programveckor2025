@@ -33,7 +33,7 @@ public class Attack_punch : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(Enemycheck.position, new Vector2(0, -1), 0.3f, Enemymask);
 
-        print(hit);
+        // print(hit);
         if (Input.GetKeyDown(KeyCode.J) && hasAttackedOnce == false && hasAttackedTwice == false)
         {
 

@@ -31,7 +31,7 @@ public class Player_damage : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(Playercheck.position, new Vector2(0, -1), 0.3f, Playermask);
 
-        print(hit);
+        //print(hit);
         if (Input.GetKeyDown(KeyCode.Z))
         {
             hasAttackedOnce = true;

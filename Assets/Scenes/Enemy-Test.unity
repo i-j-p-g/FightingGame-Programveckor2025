@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &65464732 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2946365681675524720, guid: e831986d65fedcd44a926a373d02c476, type: 3}
+  m_PrefabInstance: {fileID: 6731924412321299388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &170438670
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +658,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   attackCooldown: 2
+  animator: {fileID: 0}
 --- !u!1 &1346747952
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,6 +881,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1680354201 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6214228508610190951, guid: 1c56e358855d3b64c89f98d0db804103, type: 3}
+  m_PrefabInstance: {fileID: 1603218487253477148}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1714498538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,6 +1360,30 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1049924690}
+    - target: {fileID: 8185100413126220486, guid: 1c56e358855d3b64c89f98d0db804103, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1680354201}
+    - target: {fileID: 8185100413126220486, guid: 1c56e358855d3b64c89f98d0db804103, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185100413126220486, guid: 1c56e358855d3b64c89f98d0db804103, type: 3}
+      propertyPath: Enemycheck
+      value: 
+      objectReference: {fileID: 65464732}
+    - target: {fileID: 8185100413126220486, guid: 1c56e358855d3b64c89f98d0db804103, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185100413126220486, guid: 1c56e358855d3b64c89f98d0db804103, type: 3}
+      propertyPath: EnemyMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185100413126220486, guid: 1c56e358855d3b64c89f98d0db804103, type: 3}
+      propertyPath: playerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 8862298344253360150, guid: 1c56e358855d3b64c89f98d0db804103, type: 3}
       propertyPath: m_Name
       value: Hexagon Pointed-Top (1)
