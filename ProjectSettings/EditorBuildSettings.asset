@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Enemy-Test.unity
     guid: 9c202c65af1764d46a83b52e5ae69cb4
+  - enabled: 1
+    path: Assets/Scenes/level 2.2.unity
+    guid: bdfdb823a4285b44ebf5ea9bbd6d9de9
   m_configObjects: {}
